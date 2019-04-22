@@ -20,13 +20,11 @@
 
 # 一、概览
 
-
 容器主要包括 Collection 和 Map 两种，Collection 存储着对象的集合，而 Map 存储着键值对（两个对象）的映射表。
 
 ## Collection
 
-<div align="center"> <img src="https://gitee.com/CyC2018/CS-Notes/raw/master/docs/pics/6_2001550476096035.png"/> </div><br>
-
+<div align="center"> <img src="https://gitee.com/CyC2018/CS-Notes/raw/master/docs/pics/862d5e07-ff6e-4c0d-abe4-08488cbf8049_200.png" width="800px"> </div><br>
 
 ### 1. Set
 
@@ -52,7 +50,8 @@
 
 ## Map
 
-<div align="center"> <img src="https://gitee.com/CyC2018/CS-Notes/raw/master/docs/pics/2_2001550426232419.png"/> </div><br>
+<div align="center"> <img src="https://gitee.com/CyC2018/CS-Notes/raw/master/docs/pics/8c001caa-cf3d-4793-a64e-6e7dbc446c0d_200.png" width="500px"> </div><br>
+
 
 - TreeMap：基于红黑树实现。
 
@@ -67,7 +66,8 @@
 
 ## 迭代器模式
 
-<div align="center"> <img src="https://gitee.com/CyC2018/CS-Notes/raw/master/docs/pics/91aa7c29-438f-4fcc-8c63-2a75899139de.png"/> </div><br>
+<div align="center"> <img src="https://gitee.com/CyC2018/CS-Notes/raw/master/docs/pics/d0c1f611-3bc3-446d-8c0b-1b442b0ae8c91_200.png" width="600px"> </div><br>
+
 
 Collection 继承了 Iterable 接口，其中的 iterator() 方法能够产生一个 Iterator 对象，通过这个对象就可以迭代遍历 Collection 中的元素。
 
@@ -128,8 +128,7 @@ public class ArrayList<E> extends AbstractList<E>
 private static final int DEFAULT_CAPACITY = 10;
 ```
 
-<div align="center"> <img src="https://gitee.com/CyC2018/CS-Notes/raw/master/docs/pics/7935be3d-c2b3-4213-90c9-1e68ec4ac4e7.png"/> </div><br>
-
+<div align="center"> <img src="https://gitee.com/CyC2018/CS-Notes/raw/master/docs/pics/7c5e4fbe-8aab-4dd6-a7a0-aae39bfd110f_200.png" width="400px"> </div><br>
 
 ### 2. 扩容
 
@@ -392,7 +391,7 @@ transient Node<E> first;
 transient Node<E> last;
 ```
 
-<div align="center"> <img src="https://gitee.com/CyC2018/CS-Notes/raw/master/docs/pics/09184175-9bf2-40ff-8a68-3b467c77216a.png"/> </div><br>
+<div align="center"> <img src="https://gitee.com/CyC2018/CS-Notes/raw/master/docs/pics/a79aec4f-aea4-4ee2-87e3-7c7c6049b90c_200.png" width="450px"> </div><br>
 
 ### 2. 与 ArrayList 的比较
 
@@ -414,7 +413,7 @@ transient Entry[] table;
 
 Entry 存储着键值对。它包含了四个字段，从 next 字段我们可以看出 Entry 是一个链表。即数组中的每个位置被当成一个桶，一个桶存放一个链表。HashMap 使用拉链法来解决冲突，同一个链表中存放哈希值相同的 Entry。
 
-<div align="center"> <img src="https://gitee.com/CyC2018/CS-Notes/raw/master/docs/pics/1d2719d5-8d60-4c9b-a4ad-b2df7c7615af.jpg"/> </div><br>
+<div align="center"> <img src="https://gitee.com/CyC2018/CS-Notes/raw/master/docs/pics/9ccb276e-6840-4150-ae6d-fc57b8eef35b_200.png" width="500px"> </div><br>
 
 ```java
 static class Entry<K,V> implements Map.Entry<K,V> {
@@ -490,7 +489,7 @@ map.put("K3", "V3");
 - 计算键值对所在的桶；
 - 在链表上顺序查找，时间复杂度显然和链表的长度成正比。
 
-<div align="center"> <img src="https://gitee.com/CyC2018/CS-Notes/raw/master/docs/pics/cf779e26-0382-4495-8463-f1e19e2e38a0.jpg"/> </div><br>
+<div align="center"> <img src="https://gitee.com/CyC2018/CS-Notes/raw/master/docs/pics/ff98a336-a390-4d1c-adea-0a49e72fad82_200.png" width="500px"> </div><br>
 
 ### 3. put 操作
 
@@ -826,7 +825,7 @@ final Segment<K,V>[] segments;
 static final int DEFAULT_CONCURRENCY_LEVEL = 16;
 ```
 
-<div align="center"> <img src="https://gitee.com/CyC2018/CS-Notes/raw/master/docs/pics/deb18bdb-b3b3-4660-b778-b0823a48db12.jpg"/> </div><br>
+<div align="center"> <img src="https://gitee.com/CyC2018/CS-Notes/raw/master/docs/pics/d546e754-a5b2-4132-be09-b991f163884b_200.png" width="500px"> </div><br>
 
 ### 2. size 操作
 
@@ -1116,5 +1115,5 @@ public final class ConcurrentCache<K, V> {
 
 
 
-</br><div align="center">⭐️欢迎关注我的公众号 CyC2018，在公众号后台回复关键字 📚 **资料** 可领取复习大纲，这份大纲是我花了一整年时间整理的面试知识点列表，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点。可以说我基本是按照这份大纲来进行复习的，这份大纲对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据大纲上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。</div></br>
+</br><div align="center">🎨️欢迎关注我的公众号 CyC2018，在公众号后台回复关键字 **资料** 可领取复习大纲，这份大纲是我花了一整年时间整理的面试知识点列表，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点。可以说我基本是按照这份大纲来进行复习的，这份大纲对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据大纲上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。</div></br>
 <div align="center"><img width="180px" src="https://cyc-1256109796.cos.ap-guangzhou.myqcloud.com/%E5%85%AC%E4%BC%97%E5%8F%B7.jpg"></img></div>
